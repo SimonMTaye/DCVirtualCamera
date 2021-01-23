@@ -1,7 +1,6 @@
 
 #pragma once
 #include "stdafx.h"
-#include "PushGuids.h"
 #include "Logger.h"
 
 // Filter name strings
@@ -35,8 +34,8 @@ protected:
 
 	HANDLE hMapFile = NULL;
 	bool readVideoInfo = false;
-	int m_VideoWidth = 720;
-	int m_VideoHeight = 480;
+	int m_VideoWidth = 1920;
+	int m_VideoHeight = 1080;
 	long lastFrameIndex = -1;
 	int checkBufferCount = 0;
 	long m_frameSize = m_VideoWidth*m_VideoHeight * 4;

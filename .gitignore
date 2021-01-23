@@ -33,3 +33,15 @@
 
 *.opensdf
 *.sdf
+
+# DirectShow dependencies
+.deps
+
+# Vistual Studio
+.vs
+*.aps
+*.user
+
+#Builds
+Debug
+Release

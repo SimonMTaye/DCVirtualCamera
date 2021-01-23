@@ -2,6 +2,7 @@
 #pragma once
 #include "stdafx.h"
 #include "VirtualCameraPin.h"
+#include "PushGuids.h"
 
 class CVirtualCamera : public CSource,IAMVideoControl
 {

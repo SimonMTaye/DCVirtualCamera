@@ -3,14 +3,14 @@
 #include "stdafx.h"
 
 const int FilterIndex = 1;
-std::string str = "Playout VCam" + std::to_string(FilterIndex);
-std::wstring wstr(str.begin(), str.end());
-#define g_wszVirtualCamera wstr.c_str()
+const std::string name = "PhoneCam Video";
+const std::wstring wname(name.begin(), name.end());
+#define g_wszVirtualCamera wname.c_str()
 
-#define FILTER_GUID "{022460A9-C742-453C-9EED-268AE3649B3"+FilterIndex+"}"
+#define FILTER_GUID "{1950D08B-6EED-47AF-9154-DA463C8CA037}"
+// {1950D08B-6EED-47AF-9154-DA463C8CA037}
 DEFINE_GUID(CLSID_VIRTUALCAMERAFILTER,
-	0x22460a9, 0xc742, 0x453c, 0x9e, 0xed, 0x26, 0x8a, 0xe3, 0x64, 0x9b, 0x3 + FilterIndex);
-
+0x1950d08b, 0x6eed, 0x47af, 0x91, 0x54, 0xda, 0x46, 0x3c, 0x8c, 0xa0, 0x37);
 
 #ifdef __cplusplus
 extern "C" {

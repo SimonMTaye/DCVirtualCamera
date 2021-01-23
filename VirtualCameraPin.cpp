@@ -6,7 +6,7 @@
 
 
 CVirtualCameraPin::CVirtualCameraPin(HRESULT *phr, CSource *pFilter)
-	: CSourceStream(NAME("DC Virtual Camera"), phr, pFilter, L"Out")
+	: CSourceStream(NAME("PhoneCam Video Camera"), phr, pFilter, L"Out")
 {
 	m_rtStart = 0;
 	m_pName = L"Video";
@@ -433,10 +433,10 @@ std::auto_ptr<VideoData> CVirtualCameraPin::ReadVideoSamplefromPipe()
 	//
 	try
 	{
-		std::string mapName = "PlayoutXVCam" + std::to_string(FilterIndex);
+		std::string mapName = "PlayoutXVCam";
 		std::wstring wmapName(mapName.begin(), mapName.end());;
 
-		std::string mutextName = "Global\PlayoutXVCammutex" + std::to_string(FilterIndex);
+		std::string mutextName = "Global\\PlayoutXVCammutex";
 		std::wstring wmutextName(mutextName.begin(), mutextName.end());
 		//
 		if (hMapFile == NULL)

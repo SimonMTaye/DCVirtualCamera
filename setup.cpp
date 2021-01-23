@@ -13,7 +13,6 @@
 //////////////////////////////////////////////////////////////////////////
 
 
-#include <streams.h>
 #include <initguid.h>
 #include <dllsetup.h>
 #include <stdio.h>

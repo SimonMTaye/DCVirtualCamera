@@ -1,4 +1,4 @@
-LIBRARY     DCVirtualCamera.ax
+LIBRARY     virtual-cam.dll
 EXPORTS
             DllGetClassObject       PRIVATE
             DllCanUnloadNow         PRIVATE
