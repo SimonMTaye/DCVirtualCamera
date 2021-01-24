@@ -70,7 +70,7 @@ HRESULT CVirtualCameraPin::GetMediaType(int iPosition, CMediaType *pmt)
 	pvi->bmiHeader.biBitCount = m_BitCount;
 	pvi->bmiHeader.biSize = sizeof(BITMAPINFOHEADER);
 	pvi->bmiHeader.biWidth = m_VideoWidth;
-	pvi->bmiHeader.biHeight = m_VideoHeight;
+	pvi->bmiHeader.biHeight = -m_VideoHeight;
 	pvi->bmiHeader.biPlanes = 1;
 	pvi->bmiHeader.biSizeImage = m_frameSize;
 	pvi->bmiHeader.biClrImportant = 0;
@@ -154,7 +154,7 @@ HRESULT STDMETHODCALLTYPE CVirtualCameraPin::GetStreamCaps(int iIndex, AM_MEDIA_
 	pvi->bmiHeader.biBitCount = m_BitCount;
 	pvi->bmiHeader.biSize = sizeof(BITMAPINFOHEADER);
 	pvi->bmiHeader.biWidth = m_VideoWidth;
-	pvi->bmiHeader.biHeight = m_VideoHeight;
+	pvi->bmiHeader.biHeight = -m_VideoHeight;
 	pvi->bmiHeader.biPlanes = 1;
 	pvi->bmiHeader.biSizeImage = GetBitmapSize(&pvi->bmiHeader);
 	pvi->bmiHeader.biClrImportant = 0;
@@ -453,7 +453,7 @@ std::auto_ptr<VideoData> CVirtualCameraPin::ReadVideoSamplefromPipe()
 		//
 		while (true)
 		{
-			WaitForSingleObject(hMutex, 1);
+			WaitForSingleObject(hMutex, 1000);
 			
 			pBuf = (LPTSTR)MapViewOfFile(hMapFile, FILE_MAP_READ, 0, 0, 0);
 			if (pBuf == NULL)
